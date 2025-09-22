@@ -2,8 +2,7 @@
 @section('content')
 
 <body style="background-color:#fdfdfd;">
-  <!-- Hero Section -->
-<div class="hero-section text-center py-5 d-flex align-items-center" style="background: url('{{ asset('assets/image/kokol1.png') }}') no-repeat center center/cover; min-height: 80vh; position: relative;">
+<div class="img-fluid text-center py-5 d-flex align-items-center" style="background: url('{{ asset('assets/image/kokol1.png') }}'); background-repeat: no-repeat; background-size: cover; background-position: center; background-size: cover; position: relative; height: 800px;">
   <div style="background: rgba(0, 0, 50, 0.6); position: absolute; top:0; left:0; width:100%; height:100%;"></div>
   <div class="container position-relative" style="z-index: 2;">
     <img src="{{ asset('assets/image/cocol.png') }}" alt="Logo" width="150" class="mb-4 animate__animated animate__fadeInDown">
@@ -17,7 +16,7 @@
   </div>
 </div>
   <!-- Profil Sekolah -->
-  <section id="profil" class="py-5">
+  <div id="profil" class="py-5">
     <div class="container">
       <h2 class="fw-bold text-center text-primary mb-4">Profil Sekolah</h2>
       <div class="row align-items-center">
@@ -32,10 +31,9 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- Berita -->
-  <section id="berita" class="py-5 bg-light">
+  <div id="berita" class="py-5 bg-light">
     <div class="container">
       <h2 class="fw-bold text-center text-primary mb-4">Berita Terbaru</h2>
       <div class="row">
@@ -52,7 +50,7 @@
         <!-- Looping berita lainnya -->
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- Guru -->
   <section id="guru" class="py-5">
