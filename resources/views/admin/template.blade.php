@@ -5,9 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin | SMA Negeri 1 Singaparna</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-  <script src="{{ asset('assets/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-  <link rel="stylesheet" href="{{ asset('assets/fontawesome/css/all.min.css')}}">
+  <link href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+ <link href="https://cdn.datatables.net/v/dt/dt-2.0.2/datatables.min.css" rel="stylesheet">
+    <script src="https://cdn.datatables.net/v/dt/dt-2.0.2/datatables.min.js"></script>
+    <script src ="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/2.0.2/js/dataTables.bootstrap5.js"></script>
+    <script src="https://cdn.datatables.net/responsive/3.0.0/js/dataTables.responsive.js"></script>
+    <script src="https://cdn.datatables.net/responsive/3.0.0/js/responsive.bootstrap5.js"></script>
+   <link rel="stylesheet" href="{{ asset('assets/fontawesome/css/all.min.css')}}">
+   <link herf="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+   <link herf="https://cdn.datatables.net/2.0.2/css/dataTables.bootstrap5.css" rel="stylesheet">
+   <link herf="https://cdn.datatables.net/responsive/3.0.0/css/responsive.bootstrap5.css" rel="stylesheet">
   <style>
     body {
       background-color: #fdfdfd;
@@ -45,11 +55,11 @@
       <h5 class="fw-bold text-warning">SMAN 1 SINGAPARNA</h5>
     </div>
     <ul class="nav flex-column">
-        <li class="nav-item"><a href="/admin/dashbord" class="nav-link"><i class="fas fa-tachometer-alt"></i><span> Dashboard</span></a></li>
-        <li class="nav-item"><a href="" class="nav-link"><i class="fa-solid fa-newspaper"></i> Berita</a></li>
-        <li class="nav-item"><a href="" class="nav-link"><i class="fa-solid fa-person-chalkboard"></i> Guru</a></li>
-        <li class="nav-item"><a href="" class="nav-link"><i class="fa-solid fa-graduation-cap"></i> Siswa</a></li>
-        <li class="nav-item"><a href="" class="nav-link"><i class="fa-solid fa-futbol"></i> Ekskul</a></li>
+        <li class="nav-item"><a href="/admin/dashboard" class="nav-link"><i class="fas fa-tachometer-alt"></i><span> Dashboard</span></a></li>
+        <li class="nav-item"><a href="/admin/berita" class="nav-link"><i class="fa-solid fa-newspaper"></i> Berita</a></li>
+        <li class="nav-item"><a href="/admin/guru" class="nav-link"><i class="fa-solid fa-person-chalkboard"></i> Guru</a></li>
+        <li class="nav-item"><a href="/admin/siswa" class="nav-link"><i class="fa-solid fa-graduation-cap"></i> Siswa</a></li>
+        <li class="nav-item"><a href="/admin/ekstrakurikuler" class="nav-link"><i class="fa-solid fa-futbol"></i> Ekstrakurikuler</a></li>
       <li class="nav-item mt-3">
         <a href="{{ url('/logout') }}" class="btn btn-danger w-100">Logout</a>
       </li>
