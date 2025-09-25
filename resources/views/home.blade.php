@@ -1,6 +1,11 @@
 @extends('template')
 @section('content')
-
+<style>
+    h2{
+        color: #002366;
+        font-weight: bold;
+    }
+</style>
 <body style="background-color:#fdfdfd;">
 <div class="img-fluid text-center py-5 d-flex align-items-center" style="background: url('{{ asset('assets/image/kokol1.png') }}'); background-repeat: no-repeat; background-size: cover; background-position: center; background-size: cover; position: relative; height: 800px;">
   <div style="background: rgba(0, 0, 50, 0.6); position: absolute; top:0; left:0; width:100%; height:100%;"></div>
@@ -18,7 +23,7 @@
   <!-- Profil Sekolah -->
   <div id="profil" class="py-5">
     <div class="container">
-      <h2 class="fw-bold text-center text-primary mb-4">Profil Sekolah</h2>
+      <h2 class="fw-bold text-center mb-4">Profil Sekolah</h2>
       <div class="row align-items-center">
         <div class="col-md-6">
           <img src="assets/sekolah.jpg" class="img-fluid rounded shadow" alt="Profil Sekolah">
@@ -35,7 +40,7 @@
 
   <div id="berita" class="py-5 bg-light">
     <div class="container">
-      <h2 class="fw-bold text-center text-primary mb-4">Berita Terbaru</h2>
+      <h2 class="fw-bold text-center mb-4">Berita Terbaru</h2>
       <div class="row">
         <div class="col-md-4">
           <div class="card shadow-sm">
@@ -55,7 +60,7 @@
   <!-- Guru -->
   <section id="guru" class="py-5">
     <div class="container">
-      <h2 class="fw-bold text-center text-primary mb-4">Guru</h2>
+      <h2 class="fw-bold text-center mb-4">Guru</h2>
       <div class="row">
         <div class="col-md-3 text-center">
           <img src="assets/guru1.jpg" class="rounded-circle mb-2" width="120" alt="Guru">
@@ -70,7 +75,7 @@
   <!-- Siswa -->
   <section id="siswa" class="py-5 bg-light">
     <div class="container">
-      <h2 class="fw-bold text-center text-primary mb-4">Data Siswa</h2>
+      <h2 class="fw-bold text-center mb-4">Data Siswa</h2>
       <table class="table table-bordered table-striped">
         <thead class="table-dark">
           <tr>
@@ -96,7 +101,7 @@
   <!-- Galeri -->
   <section id="galeri" class="py-5">
     <div class="container">
-      <h2 class="fw-bold text-center text-primary mb-4">Galeri</h2>
+      <h2 class="fw-bold text-center mb-4">Galeri</h2>
       <div class="row">
         <div class="col-md-3">
           <div class="card">
@@ -115,15 +120,16 @@
   {{-- <div style="height: 5px; width: auto; background-color:#002366"></div> --}}
   <div id="ekskul" class="py-5 bg-light">
     <div class="container">
-      <h2 class="fw-bold text-center text-primary mb-4">Ekstrakurikuler</h2>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card shadow-sm">
-            <img src="assets/ekskul1.jpg" class="card-img-top" alt="Ekskul">
-            <div class="card-body">
-              <h5 class="card-title">Pramuka</h5>
-              <p class="card-text">Jadwal: Jumat, 15.00 WIB</p>
+      <h2 class="fw-bold text-center mb-4">Ekstrakurikuler</h2>
+      <div class="row ">
+        @foreach ($ekstra as $item)
+        <div class=" col-3 mb-4">
+            <div class="card shadow-sm p-3 border-0 d-flex flex-column align-items-center">
+                <img src="{{ asset($item->gambar) }}" class="img-fluid mx-auto d-block" alt="logo" style="height:200px;">
+                <p class="mt-2 fw-bold">{{ $item->nama_ekskul }}</p>
             </div>
+        </div>
+        @endforeach
           </div>
         </div>
         <!-- Loop ekskul -->

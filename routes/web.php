@@ -2,13 +2,12 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgendaController;
+use App\Http\Controllers\UserController;
 use App\Models\Agenda;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('home');
-});
-// Public Agenda
+Route::get('/', [UserController::class, 'home'])->name('home');
 Route::get('/agenda', [AgendaController::class, 'index'])->name('agenda.index');
 Route::get('/agenda/events', [AgendaController::class, 'events'])->name('agenda.events');
 
