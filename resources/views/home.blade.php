@@ -112,7 +112,8 @@
   </section>
 
   <!-- Ekstrakurikuler -->
-  <section id="ekskul" class="py-5 bg-light">
+  {{-- <div style="height: 5px; width: auto; background-color:#002366"></div> --}}
+  <div id="ekskul" class="py-5 bg-light">
     <div class="container">
       <h2 class="fw-bold text-center text-primary mb-4">Ekstrakurikuler</h2>
       <div class="row">
@@ -128,7 +129,7 @@
         <!-- Loop ekskul -->
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- Kontak -->
   <section id="kontak" class="py-5 text-center" style="background-color:#002366; color:white;">

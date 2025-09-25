@@ -1,0 +1,52 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Agenda;
+use Illuminate\Http\Request;
+
+class AgendaController extends Controller
+{
+    public function index()
+    {
+        return view('agenda');
+    }
+
+    public function events()
+    {
+        $agenda = Agenda::all()->map(function($item) {
+            return [
+                'title' => $item->judul,
+                'start' => $item->tanggal,
+                'description' => $item->deskripsi,
+                'location' => $item->lokasi,
+            ];
+        });
+
+        return response()->json($agenda);
+    }
+    public function agenda()
+    {
+        $data['agenda'] = Agenda::all();
+        return view('admin.agenda', $data);
+    }
+
+    public function createagenda()
+    {
+        return view('admin.create-agenda');
+    }
+
+    public function storeagenda(Request $request)
+    {
+        $request->validate([
+            'judul' => 'required|string|max:100',
+            'deskripsi' => 'nullable|string',
+            'tanggal' => 'required|date',
+            'lokasi' => 'nullable|string|max:100',
+        ]);
+
+        Agenda::create($request->all());
+
+        return redirect()->route('admin.agenda')->with('success', 'Agenda berhasil ditambahkan');
+    }
+}

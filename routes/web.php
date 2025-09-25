@@ -1,11 +1,16 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AgendaController;
+use App\Models\Agenda;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
 });
+// Public Agenda
+Route::get('/agenda', [AgendaController::class, 'index'])->name('agenda.index');
+Route::get('/agenda/events', [AgendaController::class, 'events'])->name('agenda.events');
 
 
 Route::get('/admin/dashboard',  [AdminController::class, 'dashboard'])->name('admin.dashboard');
@@ -13,6 +18,7 @@ Route::get('/admin/berita', [AdminController::class, 'berita'])->name('admin.ber
 Route::get('/admin/siswa', [AdminController::class, 'siswa'])->name('admin.siswa');
 Route::get('/admin/guru', [AdminController::class, 'guru'])->name('admin.guru');
 Route::get('/admin/ekstrakurikuler', [AdminController::class, 'ekstra'])->name('admin.ekstra');
+Route::get('/admin/agenda', [AgendaController::class, 'agenda'])->name('admin.agenda');
 Route::get('/create-siswa', [AdminController::class, 'create'])->name('admin.create-siswa');
 Route::post('/create-siswa', [AdminController::class, 'store'])->name('admin.store-siswa');
 Route::get('/create-berita', [AdminController::class, 'createberita'])->name('admin.create-berita');
@@ -21,3 +27,5 @@ Route::get('/create-guru', [AdminController::class, 'createguru'])->name('admin.
 Route::post('/create-guru', [AdminController::class, 'storeguru'])->name('admin.store-guru');
 Route::get('/create-ekstra', [AdminController::class, 'createekstra'])->name('admin.create-ekstra');
 Route::post('/create-ekstra', [AdminController::class, 'storeekstra'])->name('admin.store-ekstra');
+Route::get('/create-agenda', [AgendaController::class, 'createagenda'])->name('admin.create-agenda');
+Route::post('/create-agenda', [AgendaController::class, 'storeagenda'])->name('admin.store-agenda');
