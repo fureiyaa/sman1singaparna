@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Berita;
 use App\Models\ekstrakurikuler;
+use App\Models\Galeri;
 use App\Models\Guru;
 use App\Models\Siswa;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+
     public function dashboard(){
         $data ['berita'] = Berita::latest()->take(4)->get();
         $data['siswa'] = Siswa::all();
@@ -142,4 +144,34 @@ class AdminController extends Controller
         return redirect()->route('admin.ekstra')->with('success', 'Berita berhasil ditambahkan');
 
     }
+    public function galeri(){
+        return view('admin.galeri');
+    }
+    public function creategaleri(){
+        return view('admin.create-galeri');
+    }
+    public function storegaleri( Request $request)
+    {
+        $request->validate([
+            'judul' => 'required|string|max:50',
+            'keterangan' => 'required|string',
+            'file' => 'required|file|mimes:jpg,jpeg,png,mp4,mov,avi|max:10240',
+            'kategori' => 'required|string|max:20',
+        ]);
+        $filegaleri = null;
+        if ($request->hasFile('file')) {
+            $file = $request->file('file');
+            $galeri = time().'_'.$file->getClientOriginalName();
+            $file->move(public_path('galeri'), $galeri);
+            $filegaleri = 'galeri/'.$galeri;
+        }
+        Galeri::create([
+            'judul' => $request->judul,
+            'keterangan' => $request->keterangan,
+            'file' => $filegaleri,
+            'kategori' => $request->kategori,
+        ]);
+        return redirect()->route('admin.galeri')->with('success', 'Galeri berhasil ditambahkan');
+    }
 }
+

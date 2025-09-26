@@ -59,7 +59,7 @@
 
 <div class="container my-5">
     <div class="agenda-header">
-        <h2><i class="fa-solid fa-calendar-days me-2"></i> Agenda Sekolah</h2>
+        <h2><i class="fa-solid fa-calendar-days me-2"></i> Agenda SMAN 1 SINGAPARNA</h2>
     </div>
 
     <div id="calendar"></div>

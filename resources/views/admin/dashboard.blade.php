@@ -137,44 +137,36 @@
                     <h5 class="card-title mb-0"><i class="fas fa-bolt me-2"></i>Aksi Cepat</h5>
                 </div>
                 <div class="card-body">
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <a href="{{ route('admin.create-siswa') }}" class="btn btn-action btn-primary w-100 text-start">
-                                <i class="fas fa-plus-circle me-2 text-white"></i>
-                                <div class="text-white">
-                                    <h6 class="mb-0">Tambah Data Siswa</h6>
-                                    <small>Input data siswa</small>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-6">
-                            <a href="{{ route('admin.create-berita') }}" class="btn btn-action btn-success w-100 text-start">
-                                <i class="fa-solid fa-newspaper text-white"></i>
-                                <div class="text-white">
-                                    <h6 class="mb-0">Buat Berita</h6>
-                                    <small>Buat berita terbaru</small>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-6">
-                            <a href="{{ route('admin.create-ekstra') }}" class="btn btn-action btn-info w-100 text-start">
-                                <i class="fa-solid fa-futbol"></i>
-                                <div>
-                                    <h6 class="mb-0">Tambah Estrakurikuler</h6>
-                                    <small>Input Data Ekstrakurikuler</small>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-6">
-                            <a href="{{ route('admin.create-guru') }}" class="btn btn-action btn-warning w-100 text-start">
-                                <i class="fas fa-user-tie me-2"></i>
-                                <div>
-                                    <h6 class="mb-0">Tambah Data Guru</h6>
-                                    <small>Input data guru</small>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+                    <div class="container">
+                        <div id="calendar"></div>
+                    <!-- FullCalendar CSS -->
+                    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.css" rel="stylesheet">
+
+                    <!-- FullCalendar JS -->
+                    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js"></script>
+
+                    <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        let calendarEl = document.getElementById('calendar');
+
+                        let calendar = new FullCalendar.Calendar(calendarEl, {
+                            initialView: 'dayGridMonth',
+                            locale: 'id',
+                            themeSystem: 'bootstrap5',
+                            events: '{{ route("agenda.events") }}',
+                            eventClick: function(info) {
+                                alert(
+                                    "Judul: " + info.event.title + "\n" +
+                                    "Tanggal: " + info.event.start.toLocaleDateString('id-ID') + "\n" +
+                                    "Lokasi: " + (info.event.extendedProps.location ?? '-') + "\n" +
+                                    "Deskripsi: " + (info.event.extendedProps.description ?? '-')
+                                );
+                            }
+                        });
+
+                        calendar.render();
+                    });
+                    </script>
                 </div>
             </div>
         </div>
@@ -182,6 +174,45 @@
 </div>
 
 <style>
+
+    /* Kalender */
+    #calendar {
+        background: #ffffff;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Toolbar FullCalendar */
+    .fc-toolbar-title {
+        color: #002366 !important;
+        font-weight: 700;
+    }
+
+    .fc-button {
+        background-color: #002366 !important;
+        border: none !important;
+        color: white !important;
+        font-weight: 500;
+    }
+
+    .fc-button:hover {
+        background-color: #FFD700 !important;
+        color: #002366 !important;
+    }
+
+    /* Hari ini */
+    .fc-day-today {
+        background-color: #fff8e1 !important; /* kuning lembut */
+    }
+
+    /* Event */
+    .fc-event {
+        background-color: #002366 !important;
+        border: none !important;
+        color: #FFD700 !important;
+        font-weight: 600;
+    }
     .page-header {
         background-color:#002366;
         color: white;

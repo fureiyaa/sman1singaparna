@@ -17,6 +17,7 @@ Route::get('/admin/berita', [AdminController::class, 'berita'])->name('admin.ber
 Route::get('/admin/siswa', [AdminController::class, 'siswa'])->name('admin.siswa');
 Route::get('/admin/guru', [AdminController::class, 'guru'])->name('admin.guru');
 Route::get('/admin/ekstrakurikuler', [AdminController::class, 'ekstra'])->name('admin.ekstra');
+Route::get('/admin/galeri', [AdminController::class, 'galeri'])->name('admin.galeri');
 Route::get('/admin/agenda', [AgendaController::class, 'agenda'])->name('admin.agenda');
 Route::get('/create-siswa', [AdminController::class, 'create'])->name('admin.create-siswa');
 Route::post('/create-siswa', [AdminController::class, 'store'])->name('admin.store-siswa');

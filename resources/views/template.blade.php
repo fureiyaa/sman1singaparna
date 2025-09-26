@@ -28,43 +28,45 @@
     }
 </style>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#001244; height: 40px;">
-        <div class="container">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link active" ><i class="fa-solid fa-location-dot"></i> Jl. Perikanan Darat, Cipakat, Singaparna, Tasikmalaya, Jawa Barat 46416</a></li>
-                <li class="nav-item"><a class="nav-link active" ><i class="fa-solid fa-envelope"></i> sman1singaparna@gmail.com</a></li>
-                <li class="nav-item"><a class="nav-link active" ><i class="fa-solid fa-phone"></i> (0265) 545203</a></li>
-            </ul>
+    <div class="fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#001244; height: 40px;">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" ><i class="fa-solid fa-location-dot"></i> Jl. Perikanan Darat, Cipakat, Singaparna, Tasikmalaya, Jawa Barat 46416</a></li>
+                    <li class="nav-item"><a class="nav-link active" ><i class="fa-solid fa-envelope"></i> sman1singaparna@gmail.com</a></li>
+                    <li class="nav-item"><a class="nav-link active" ><i class="fa-solid fa-phone"></i> (0265) 545203</a></li>
+                </ul>
+                </div>
             </div>
-        </div>
-    </nav>
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#002366">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#">
-            <img src="{{ asset('assets/image/cocol.png') }}"alt="Logo" width="50" class="me-2">
-            <span class="fw-bold text-warning">SMA NEGERI 1 SINGAPARNA</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-            </button>
+        </nav>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#002366">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="{{ asset('assets/image/cocol.png') }}"alt="Logo" width="50" class="me-2">
+                <span class="fw-bold text-warning">SMA NEGERI 1 SINGAPARNA</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="/agenda">Agenda</a></li>
-                <li class="nav-item"><a class="nav-link" href="#berita">Berita</a></li>
-                <li class="nav-item"><a class="nav-link" href="#guru">Guru</a></li>
-                <li class="nav-item"><a class="nav-link" href="#siswa">Siswa</a></li>
-                <li class="nav-item"><a class="nav-link" href="#galeri">Galeri</a></li>
-                <li class="nav-item"><a class="nav-link" href="#ekskul">Ekstrakurikuler</a></li>
-            </ul>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/agenda">Agenda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#berita">Berita</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#guru">Guru</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#siswa">Siswa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#galeri">Galeri</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#ekskul">Ekstrakurikuler</a></li>
+                </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </div>
     <div>
         @yield('content')
     </div>

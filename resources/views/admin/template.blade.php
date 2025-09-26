@@ -60,7 +60,8 @@
         <li class="nav-item"><a href="/admin/guru" class="nav-link"><i class="fa-solid fa-person-chalkboard"></i> Guru</a></li>
         <li class="nav-item"><a href="/admin/siswa" class="nav-link"><i class="fa-solid fa-graduation-cap"></i> Siswa</a></li>
         <li class="nav-item"><a href="/admin/ekstrakurikuler" class="nav-link"><i class="fa-solid fa-futbol"></i> Ekstrakurikuler</a></li>
-        <li class="nav-item"><a href="/admin/agenda" class="nav-link"><i class="fa-solid fa-futbol"></i> Agenda</a></li>
+        <li class="nav-item"><a href="/admin/agenda" class="nav-link"><i class="fa-solid fa-clipboard-list"></i> Agenda</a></li>
+        <li class="nav-item"><a href="/admin/galeri" class="nav-link"><i class="fa-solid fa-photo-film"></i> Galeri</a></li>
       <li class="nav-item mt-3">
         <a href="{{ url('/logout') }}" class="btn btn-danger w-100">Logout</a>
       </li>
