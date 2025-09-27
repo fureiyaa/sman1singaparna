@@ -8,6 +8,10 @@ use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [UserController::class, 'home'])->name('home');
+Route::get('/news', [UserController::class, 'berita'])->name('berita');
+Route::get('/berita/{id}', [UserController::class, 'show'])->name('berita.show');
+Route::get('/guru', [UserController::class, 'siswa'])->name('siswa');
+Route::get('/galery', [UserController::class, 'galeri'])->name('siswa');
 Route::get('/agenda', [AgendaController::class, 'index'])->name('agenda.index');
 Route::get('/agenda/events', [AgendaController::class, 'events'])->name('agenda.events');
 
@@ -27,5 +31,7 @@ Route::get('/create-guru', [AdminController::class, 'createguru'])->name('admin.
 Route::post('/create-guru', [AdminController::class, 'storeguru'])->name('admin.store-guru');
 Route::get('/create-ekstra', [AdminController::class, 'createekstra'])->name('admin.create-ekstra');
 Route::post('/create-ekstra', [AdminController::class, 'storeekstra'])->name('admin.store-ekstra');
+Route::get('/create-galeri', [AdminController::class, 'creategaleri'])->name('admin.create-galeri');
+Route::post('/create-galeri', [AdminController::class, 'storegaleri'])->name('admin.store-galeri');
 Route::get('/create-agenda', [AgendaController::class, 'createagenda'])->name('admin.create-agenda');
 Route::post('/create-agenda', [AgendaController::class, 'storeagenda'])->name('admin.store-agenda');

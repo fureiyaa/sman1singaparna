@@ -17,7 +17,6 @@
         margin: 0;
     }
 
-    /* Kalender */
     #calendar {
         background: #ffffff;
         border-radius: 0.5rem;
@@ -25,7 +24,6 @@
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     }
 
-    /* Toolbar FullCalendar */
     .fc-toolbar-title {
         color: #002366 !important;
         font-weight: 700;
@@ -43,17 +41,18 @@
         color: #002366 !important;
     }
 
-    /* Hari ini */
     .fc-day-today {
-        background-color: #fff8e1 !important; /* kuning lembut */
+        background-color: #fff8e1 !important;
     }
 
-    /* Event */
     .fc-event {
         background-color: #002366 !important;
         border: none !important;
         color: #FFD700 !important;
         font-weight: 600;
+    }
+    .modal-header {
+        background-color: #002366;
     }
 </style>
 
@@ -63,6 +62,27 @@
     </div>
 
     <div id="calendar"></div>
+</div>
+
+<!-- Modal Detail Event -->
+<div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header text-white">
+        <h5 class="modal-title" id="eventModalLabel">Detail Agenda</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Judul:</strong> <span id="eventTitle"></span></p>
+        <p><strong>Tanggal:</strong> <span id="eventDate"></span></p>
+        <p><strong>Lokasi:</strong> <span id="eventLocation"></span></p>
+        <p><strong>Deskripsi:</strong> <span id="eventDescription"></span></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- FullCalendar CSS -->
@@ -81,12 +101,15 @@ document.addEventListener('DOMContentLoaded', function() {
         themeSystem: 'bootstrap5',
         events: '{{ route("agenda.events") }}',
         eventClick: function(info) {
-            alert(
-                "Judul: " + info.event.title + "\n" +
-                "Tanggal: " + info.event.start.toLocaleDateString('id-ID') + "\n" +
-                "Lokasi: " + (info.event.extendedProps.location ?? '-') + "\n" +
-                "Deskripsi: " + (info.event.extendedProps.description ?? '-')
-            );
+            // Isi data modal
+            document.getElementById("eventTitle").innerText = info.event.title;
+            document.getElementById("eventDate").innerText = info.event.start.toLocaleDateString('id-ID');
+            document.getElementById("eventLocation").innerText = info.event.extendedProps.location ?? '-';
+            document.getElementById("eventDescription").innerText = info.event.extendedProps.description ?? '-';
+
+            // Tampilkan modal
+            let eventModal = new bootstrap.Modal(document.getElementById('eventModal'));
+            eventModal.show();
         }
     });
 

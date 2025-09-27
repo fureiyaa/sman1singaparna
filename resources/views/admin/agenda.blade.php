@@ -37,11 +37,11 @@
                 </tr>
                 </thead>
                 <tbody>
-                    @forelse($agenda as $agenda)
+                    @forelse($agenda as $item)
                     <tr>
-                        <td>{{ $agenda->judul }}</td>
-                        <td>{{ \Carbon\Carbon::parse($agenda->tanggal)->format('d M Y') }}</td>
-                        <td>{{ $agenda->lokasi ?? '-' }}</td>
+                        <td>{{ $item->judul }}</td>
+                        <td>{{ \Carbon\Carbon::parse($item->tanggal)->format('d M Y') }}</td>
+                        <td>{{ $item->lokasi ?? '-' }}</td>
                         <td>
                             {{-- <a href="{{ route('admin.agenda.edit', $agenda) }}" class="btn btn-warning btn-sm">Edit</a>
                             <form action="{{ route('admin.agenda.destroy', $agenda) }}" method="POST" class="d-inline">

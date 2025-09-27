@@ -18,9 +18,9 @@
 <div class="container-fluid py-4">
     <div class="page-header">
         <div class="d-flex justify-content-between align-items-center">
-            <h1 class="page-title mb-0"><i class="fa-solid fa-newspaper"></i> Berita</h1>
+            <h1 class="page-title mb-0"><i class="fa-solid fa-photo-film"></i> Galeri</h1>
             <div class="gap-3 d-flex">
-                <a class="btn btn-light" href="">
+                <a class="btn btn-light" href="{{ route('admin.create-galeri') }}">
                     <i class="fas fa-plus-circle me-1"></i> Buat Galeri
                 </a>
             </div>
@@ -35,28 +35,29 @@
                     <th>Keteranagan</th>
                     <th>File</th>
                     <th>Kategori</th>
-                    <th width="15%">Aksi</th>
+                    <th>Tanggal</th>
                 </tr>
                 </thead>
                 <tbody>
-                    {{-- @foreach ($berita as $item)
-                    <tr>
-                        <td>
-                            @if($item->gambar)
-                                <img src="{{ asset($item->gambar) }}" width="100" class="img-thumbnail">
-                            @else
-                                <span class="text-muted">Tidak ada gambar</span>
-                            @endif
-                        </td>
-                        <td>{{ $item->judul }}</td>
-                        <td>{{ $item->isi }}</td>
-                        <td>{{ $item->tanggal }}</td>
-                        <td>
-                            <a href="#" class="btn btn-sm btn-warning">Edit</a>
-                            <a href="#" class="btn btn-sm btn-danger">Hapus</a>
-                        </td>
-                    </tr>
-                    @endforeach --}}
+                    @foreach ($galeri as $item)
+                        <tr>
+                            <td>{{ $item->judul }}</td>
+                            <td>{{ $item->keterangan }}</td>
+                            <td>
+                                @if($item->kategori == 'Foto')
+                                    <img src="{{ asset($item->file) }}"
+                                        width="120" class="img-thumbnail">
+                                @elseif($item->kategori == 'Video')
+                                    <video width="150" controls>
+                                        <source src="{{ asset($item->file) }}" type="video/mp4">
+                                        Browser tidak mendukung video.
+                                    </video>
+                                @endif
+                            </td>
+                            <td>{{ $item->kategori }}</td>
+                            <td>{{ $item->tanggal }}</td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

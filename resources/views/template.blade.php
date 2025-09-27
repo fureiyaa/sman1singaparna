@@ -57,17 +57,16 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="/agenda">Agenda</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#berita">Berita</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#guru">Guru</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#siswa">Siswa</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#galeri">Galeri</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/news">Berita</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/guru">Guru</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/galery">Galeri</a></li>
                     <li class="nav-item"><a class="nav-link" href="#ekskul">Ekstrakurikuler</a></li>
                 </ul>
                 </div>
             </div>
         </nav>
     </div>
-    <div>
+    <div class="mt-5 pt-4">
         @yield('content')
     </div>
     <footer class="text-center py-3" style="background-color:#001244; color:white;">

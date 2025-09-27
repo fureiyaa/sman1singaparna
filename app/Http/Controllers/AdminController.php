@@ -13,7 +13,7 @@ class AdminController extends Controller
 {
 
     public function dashboard(){
-        $data ['berita'] = Berita::latest()->take(4)->get();
+        $data ['berita'] = Berita::latest()->take(5)->get();
         $data['siswa'] = Siswa::all();
         $data['guru'] = Guru::all();
         $data['ekstra'] = ekstrakurikuler::all();
@@ -145,7 +145,8 @@ class AdminController extends Controller
 
     }
     public function galeri(){
-        return view('admin.galeri');
+        $data['galeri'] = Galeri::all();
+        return view('admin.galeri', $data);
     }
     public function creategaleri(){
         return view('admin.create-galeri');
@@ -157,6 +158,7 @@ class AdminController extends Controller
             'keterangan' => 'required|string',
             'file' => 'required|file|mimes:jpg,jpeg,png,mp4,mov,avi|max:10240',
             'kategori' => 'required|string|max:20',
+            'tanggal' => 'required|date',
         ]);
         $filegaleri = null;
         if ($request->hasFile('file')) {
@@ -170,6 +172,7 @@ class AdminController extends Controller
             'keterangan' => $request->keterangan,
             'file' => $filegaleri,
             'kategori' => $request->kategori,
+            'tanggal' => $request->tanggal,
         ]);
         return redirect()->route('admin.galeri')->with('success', 'Galeri berhasil ditambahkan');
     }

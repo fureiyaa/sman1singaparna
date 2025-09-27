@@ -110,12 +110,12 @@
                         @foreach ($berita as $item)
                         <div class="d-flex align-items-center mb-3 border-bottom pb-2">
                             @if($item->gambar)
-                                <img src="{{ asset($item->gambar) }}" width="70" height="70" class="rounded me-3">
+                                <img src="{{ asset($item->gambar) }}" width="120" height="100" class="rounded me-3">
                             @else
                                 <div class="bg-light text-muted d-flex align-items-center justify-content-center rounded me-3" style="width:70px; height:50px;">No Img</div>
                             @endif
                             <div>
-                                <h6 class="mb-1">{{ $item->judul }}</h6>
+                                <h5 class="mb-1">{{ $item->judul }}</h5>
                                 <small class="text-muted"><i class="fas fa-calendar me-1"></i>{{ $item->tanggal }}</small>
                             </div>
                         </div>
