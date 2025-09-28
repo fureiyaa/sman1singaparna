@@ -106,7 +106,7 @@
                 class="img-fluid animate__animated animate__fadeInUp animate__delay-1s"
                 alt="Kepala Sekolah"
                 style="width: 350px; height: 350px; object-fit: cover;">
-            <h5 class="mt-3 fw-bold text-dark">Drs. Ade Iryanto</h5>
+            <h5 class="mt-3 fw-bold text-dark">Drs. Dede Iryanto</h5>
             <p class="text-muted fst-italic">Kepala SMA Negeri 1 Singaparna</p>
         </div>
 

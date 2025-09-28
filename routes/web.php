@@ -10,8 +10,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [UserController::class, 'home'])->name('home');
 Route::get('/news', [UserController::class, 'berita'])->name('berita');
 Route::get('/berita/{id}', [UserController::class, 'show'])->name('berita.show');
-Route::get('/guru', [UserController::class, 'siswa'])->name('siswa');
+Route::get('/gurus', [UserController::class, 'guru'])->name('guru');
 Route::get('/galery', [UserController::class, 'galeri'])->name('siswa');
+Route::get('/ekstrakurikuler', [UserController::class, 'ekstra'])->name('ekstra');
 Route::get('/agenda', [AgendaController::class, 'index'])->name('agenda.index');
 Route::get('/agenda/events', [AgendaController::class, 'events'])->name('agenda.events');
 

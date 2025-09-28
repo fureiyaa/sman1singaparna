@@ -58,9 +58,9 @@
                     <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="/agenda">Agenda</a></li>
                     <li class="nav-item"><a class="nav-link" href="/news">Berita</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/guru">Guru</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/gurus">Guru</a></li>
                     <li class="nav-item"><a class="nav-link" href="/galery">Galeri</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#ekskul">Ekstrakurikuler</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/ekstrakurikuler">Ekstrakurikuler</a></li>
                 </ul>
                 </div>
             </div>
