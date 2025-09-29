@@ -33,26 +33,21 @@
                     <th>Judul</th>
                     <th>Tanggal</th>
                     <th>Lokasi</th>
-                    <th width="15%">Aksi</th>
+                    <th>Aksi</th>
                 </tr>
                 </thead>
                 <tbody>
-                    @forelse($agenda as $item)
+                    @foreach($agenda as $item)
                     <tr>
                         <td>{{ $item->judul }}</td>
                         <td>{{ \Carbon\Carbon::parse($item->tanggal)->format('d M Y') }}</td>
                         <td>{{ $item->lokasi ?? '-' }}</td>
                         <td>
-                            {{-- <a href="{{ route('admin.agenda.edit', $agenda) }}" class="btn btn-warning btn-sm">Edit</a>
-                            <form action="{{ route('admin.agenda.destroy', $agenda) }}" method="POST" class="d-inline">
-                                @csrf @method('DELETE')
-                                <button class="btn btn-danger btn-sm" onclick="return confirm('Yakin hapus?')">Hapus</button>
-                            </form> --}}
+                            <a href="#" class="btn btn-sm btn-warning">Edit</a>
+                            <a href="{{ route('admin.delete-agenda', Crypt::encrypt($item->id))}}" class="btn btn-sm btn-danger">Hapus</a>
                         </td>
                     </tr>
-                    @empty
-                    <tr><td colspan="4" class="text-center">Belum ada agenda</td></tr>
-                    @endforelse
+                    @endforeach
                 </tbody>
             </table>
         </div>

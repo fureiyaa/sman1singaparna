@@ -53,7 +53,7 @@
                         <td>{{ $item->tanggal }}</td>
                         <td>
                             <a href="#" class="btn btn-sm btn-warning">Edit</a>
-                            <a href="#" class="btn btn-sm btn-danger">Hapus</a>
+                            <a href="{{ route('admin.delete-berita', Crypt::encrypt($item->id))}}" class="btn btn-sm btn-danger">Hapus</a>
                         </td>
                     </tr>
                     @endforeach

@@ -36,6 +36,7 @@
                     <th>File</th>
                     <th>Kategori</th>
                     <th>Tanggal</th>
+                    <th>Aksi</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -56,6 +57,10 @@
                             </td>
                             <td>{{ $item->kategori }}</td>
                             <td>{{ $item->tanggal }}</td>
+                            <td>
+                                <a href="#" class="btn btn-sm btn-warning">Edit</a>
+                                <a href="{{ route('admin.delete-galeri', Crypt::encrypt($item->id))}}" class="btn btn-sm btn-danger">Hapus</a>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>

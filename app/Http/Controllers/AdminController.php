@@ -7,10 +7,19 @@ use App\Models\ekstrakurikuler;
 use App\Models\Galeri;
 use App\Models\Guru;
 use App\Models\Siswa;
+use Illuminate\Contracts\Encryption\DecryptException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 
 class AdminController extends Controller
 {
+    private function decryptId($id){
+        try {
+            return Crypt::decrypt($id);
+        } catch (DecryptException $e) {
+            abort(404);
+        }
+    }
 
     public function dashboard(){
         $data ['berita'] = Berita::latest()->take(5)->get();
@@ -55,6 +64,16 @@ class AdminController extends Controller
         return redirect()->route('admin.berita')->with('success', 'Berita berhasil ditambahkan');
     }
     }
+    public function deleteberita($id)
+    {
+        $id = $this->decryptId($id);
+
+        $berita = Berita::findOrFail($id);
+        $berita->delete();
+        return redirect()->route('admin.berita')->with('success', 'Berita deleted successfully.');
+    }
+
+
     public function guru(){
         $data['guru'] = Guru::all();
         return view('admin.guru', $data);
@@ -150,6 +169,14 @@ class AdminController extends Controller
     }
     public function creategaleri(){
         return view('admin.create-galeri');
+    }
+    public function deletegaleri($id)
+    {
+        $id = $this->decryptId($id);
+
+        $galeri = Galeri::findOrFail($id);
+        $galeri->delete();
+        return redirect()->route('admin.galeri')->with('success', 'Berita deleted successfully.');
     }
     public function storegaleri( Request $request)
     {

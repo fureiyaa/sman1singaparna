@@ -3,10 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Models\Agenda;
+use Illuminate\Contracts\Encryption\DecryptException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 
 class AgendaController extends Controller
 {
+    private function decryptId($id){
+        try {
+            return Crypt::decrypt($id);
+        } catch (DecryptException $e) {
+            abort(404);
+        }
+    }
+
     public function index()
     {
         return view('agenda');
@@ -48,5 +58,14 @@ class AgendaController extends Controller
         Agenda::create($request->all());
 
         return redirect()->route('admin.agenda')->with('success', 'Agenda berhasil ditambahkan');
+    }
+
+    public function deleteagenda($id)
+    {
+        $id = $this->decryptId($id);
+
+        $berita = Agenda::findOrFail($id);
+        $berita->delete();
+        return redirect()->route('admin.agenda')->with('success', 'Berita deleted successfully.');
     }
 }

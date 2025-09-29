@@ -49,8 +49,8 @@
     </div>
     <div class="row g-4">
         @foreach($ekstra as $item)
-        <div class="col-md-3 col-sm-6">
-            <div class="card ekskul-card h-100 shadow-sm">
+        <div class="col-md-3 col-sm-6 ">
+            <div class="card ekskul-card h-100 shadow-sm animate__animated animate__fadeInUp">
                 <img src="{{ asset($item->gambar) }}" class="card-img-top" alt="{{ $item->nama_ekskul }}">
                 <div class="card-body">
                     <h5 class="card-title">{{ $item->nama_ekskul }}</h5>
