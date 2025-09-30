@@ -11,10 +11,6 @@
                     <i class="fas fa-calendar me-1"></i>
                     {{ \Carbon\Carbon::now()->translatedFormat('l, d F Y') }}
                 </span>
-                <span class="badge bg-light text-dark">
-                    <i class="fas fa-clock me-1"></i>
-                    <span id="current-time">{{ \Carbon\Carbon::now()->format('H:i:s') }}</span>
-                </span>
             </div>
         </div>
     </div>
@@ -303,61 +299,7 @@
         border-bottom: 1px solid #f8f9fa;
         background-color:#002366;
     }
-
-    /* Responsive styles */
-    @media (max-width: 768px) {
-        .page-header {
-            padding: 1rem;
-        }
-
-        .page-title {
-            font-size: 1.5rem;
-        }
-
-        .stats-value {
-            font-size: 1.8rem;
-        }
-
-        .stats-icon {
-            font-size: 2rem;
-        }
-
-        .btn-action {
-            padding: 0.75rem;
-        }
-    }
-
-    @media (max-width: 576px) {
-        .stats-value {
-            font-size: 1.5rem;
-        }
-
-        .stats-label {
-            font-size: 0.9rem;
-        }
-    }
 </style>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Update current time every second
-        function updateTime() {
-            const now = new Date();
-            const timeElement = document.getElementById('current-time');
-            if (timeElement) {
-                timeElement.textContent = now.toLocaleTimeString('id-ID');
-            }
-        }
-
-        setInterval(updateTime, 1000);
-
-        // Add animation to stats cards
-        const statsCards = document.querySelectorAll('.stats-card');
-        statsCards.forEach((card, index) => {
-            card.style.animationDelay = ${index * 0.1}s;
-        });
-    });
-</script>
 @endsection
 
 {{-- @extends('admin.template')
