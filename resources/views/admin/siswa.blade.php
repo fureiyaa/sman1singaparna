@@ -35,6 +35,7 @@
                         <th>Nama Siswa</th>
                         <th>Jenis Kelamin</th>
                         <th>Tahun Masuk</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -44,6 +45,10 @@
                     <td>{{ $item->nama_siswa }}</td>
                     <td>{{ $item->jenis_kelamin }}</td>
                     <td>{{ $item->tahun_masuk }}</td>
+                    <td>
+                        <a href="#" class="btn btn-sm btn-warning">Edit</a>
+                        <a href="{{ route('admin.delete-siswa', Crypt::encrypt($item->id))}}" class="btn btn-sm btn-danger">Hapus</a>
+                    </td>
                     </tr>
                     @endforeach
                 </tbody>

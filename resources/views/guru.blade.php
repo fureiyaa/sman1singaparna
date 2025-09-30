@@ -8,8 +8,7 @@
         padding: 2rem 1rem;
         border-radius: 0.5rem;
         margin-bottom: 2rem;
-        margin-top: -80px;
-        text-align: center;
+        text-align: center;1
     }
     .guru-header h2 {
         font-weight: bold;
@@ -92,4 +91,3 @@
     </div>
 </div>
 @endsection
-```

@@ -40,17 +40,18 @@
     }
 </style>
 
-<div class="container py-5">
-    <div class="ekskul-header animate__animated animate__fadeInDown" style="background: url('{{ asset('assets/image/galeri.jpg') }}') no-repeat center; background-size: cover; height: 150px; background-position: center; display: flex; background-position: 0px -500px; flex-direction: column; justify-content: center; align-items: center; position: relative;">
+<div class="container py-5 min-vh-100">
+    <div class="ekskul-header animate__animated animate__fadeInDown" style="background: url('{{ asset('assets/image/ekstra.jpg') }}') no-repeat center; background-size: cover; height: 150px; background-position: center; display: flex; background-position: 0px -300px; flex-direction: column; justify-content: center; align-items: center; position: relative;">
         <div style="background: rgba(0, 0, 50, 0.6); position: absolute; top:0; left:0; width:100%; height:100%; border-radius: 0.5rem;"></div>
-            <div class="container position-relative">
-                <h2 class="text-center mb-4">Ekstrakurikuler SMAN 1 Singaparna</h2>
-            </div>
+        <div class="position-relative">
+            <h2>Ekstrakurikuler SMAN 1 SINGAPARNA</h2>
+            <small>Kegiatan pengembangan minat dan bakat siswa</small>
+        </div>
     </div>
     <div class="row g-4">
         @foreach($ekstra as $item)
-        <div class="col-md-3 col-sm-6 ">
-            <div class="card ekskul-card h-100 shadow-sm animate__animated animate__fadeInUp">
+        <div class="col-md-3 col-sm-6 animate__animated animate__fadeInUp">
+            <div class="card ekskul-card h-100 shadow-sm">
                 <img src="{{ asset($item->gambar) }}" class="card-img-top" alt="{{ $item->nama_ekskul }}">
                 <div class="card-body">
                     <h5 class="card-title">{{ $item->nama_ekskul }}</h5>

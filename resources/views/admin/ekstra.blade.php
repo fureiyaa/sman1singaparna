@@ -36,6 +36,7 @@
                         <th>Jadwal latihan</th>
                         <th>Deskripsi</th>
                         <th>Pembina</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -52,6 +53,10 @@
                     <td>{{ $item->jadwal_latihan }}</td>
                     <td>{{ $item->deskripsi }}</td>
                     <td>{{ $item->pembina }}</td>
+                    <td>
+                        <a href="#" class="btn btn-sm btn-warning">Edit</a>
+                        <a href="{{ route('admin.delete-ekstra', Crypt::encrypt($item->id))}}" class="btn btn-sm btn-danger">Hapus</a>
+                    </td>
                     </tr>
                     @endforeach
                 </tbody>

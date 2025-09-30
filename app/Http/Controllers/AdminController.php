@@ -107,6 +107,15 @@ class AdminController extends Controller
 
         return redirect()->route('admin.guru')->with('success', 'Berita berhasil ditambahkan');
     }
+    public function deleteguru($id)
+    {
+        $id = $this->decryptId($id);
+
+        $guru = Guru::findOrFail($id);
+        $guru->delete();
+        return redirect()->route('admin.guru')->with('success', 'Berita deleted successfully.');
+    }
+
     public function siswa(){
         $data['siswa'] = Siswa::all();
         return view('admin.siswa', $data);
@@ -126,6 +135,14 @@ class AdminController extends Controller
     Siswa::create($request->all());
 
         return redirect()->route('admin.siswa');
+    }
+    public function deletesiswa($id)
+    {
+        $id = $this->decryptId($id);
+
+        $siswa = Siswa::findOrFail($id);
+        $siswa->delete();
+        return redirect()->route('admin.siswa')->with('success', 'Berita deleted successfully.');
     }
     public function ekstra(){
         $data['ekstra'] = ekstrakurikuler::all();
@@ -162,6 +179,14 @@ class AdminController extends Controller
 
         return redirect()->route('admin.ekstra')->with('success', 'Berita berhasil ditambahkan');
 
+    }
+    public function deleteekstra($id)
+    {
+        $id = $this->decryptId($id);
+
+        $ekstra = ekstrakurikuler::findOrFail($id);
+        $ekstra->delete();
+        return redirect()->route('admin.ekstra')->with('success', 'Berita deleted successfully.');
     }
     public function galeri(){
         $data['galeri'] = Galeri::all();

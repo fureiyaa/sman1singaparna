@@ -35,6 +35,7 @@
                         <th>Nama Guru</th>
                         <th>NIP</th>
                         <th>Mata Pelajaran</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -50,6 +51,10 @@
                     <td>{{ $item->nama_guru }}</td>
                     <td>{{ $item->nip }}</td>
                     <td>{{ $item->mapel }}</td>
+                    <td>
+                        <a href="#" class="btn btn-sm btn-warning">Edit</a>
+                        <a href="{{ route('admin.delete-guru', Crypt::encrypt($item->id))}}" class="btn btn-sm btn-danger">Hapus</a>
+                    </td>
                     </tr>
                     @endforeach
                 </tbody>
