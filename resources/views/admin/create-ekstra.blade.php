@@ -1,5 +1,8 @@
 @extends('admin.template')
 @section('content')
+<style>
+    
+</style>
 <div class="container mt-4">
 @if ($errors->any())
     <div class="alert alert-danger">

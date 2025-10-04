@@ -13,6 +13,10 @@
         font-weight: 700;
         font-size: 1.8rem;
     }
+    .edit{
+        background-color: #002366;
+        color: white
+    }
 </style>
 
 <div class="container-fluid py-4">
@@ -44,7 +48,7 @@
                             <td>{{ $item->username }}</td>
                             <td>{{ $item->role }}</td>
                             <td>
-                                <a href="#" class="btn btn-sm btn-warning">Edit</a>
+                                <a href="#" class="edit btn btn-sm">Edit</a>
                                 <a href="{{ route('admin.delete-user', Crypt::encrypt($item->id))}}" class="btn btn-sm btn-danger">Hapus</a>
                             </td>
                         </tr>

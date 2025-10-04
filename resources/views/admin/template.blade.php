@@ -53,7 +53,7 @@
     <div class="text-center mb-4">
         <img src="{{ asset('assets/image/cocol.png') }}" alt="Logo" width="80" class="mb-2">
         <h5 class="fw-bold text-warning">SMAN 1 SINGAPARNA</h5>
-        <a class="btn btn-light" href="{{ route('admin.profil') }}"> Profil Sekolah</a>
+        <div class="nav-item"><a class="nav-link btn shadow-sm py-4 d-flex align-items-center justify-content-center" style="height: 30px;" href="{{ route('admin.profil') }}"> Profil Sekolah</a></div>
     </div>
     <ul class="nav flex-column">
         <li class="nav-item"><a href="/admin/dashboard" class="nav-link"><i class="fas fa-tachometer-alt"></i><span> Dashboard</span></a></li>
