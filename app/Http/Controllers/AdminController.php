@@ -6,10 +6,13 @@ use App\Models\Berita;
 use App\Models\ekstrakurikuler;
 use App\Models\Galeri;
 use App\Models\Guru;
+use App\Models\profil_sekolah;
 use App\Models\Siswa;
+use App\Models\User;
 use Illuminate\Contracts\Encryption\DecryptException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -28,6 +31,47 @@ class AdminController extends Controller
         $data['ekstra'] = ekstrakurikuler::all();
 
         return view('admin.dashboard', $data);
+    }
+    public function user(){
+        $data['user'] = User::all();
+        return view('admin.user', $data);
+    }
+    public function createuser(){
+        return view('admin.create-user');
+    }
+    public function storeuser(Request $request){
+        $request->validate([
+            'name'     => 'required|string|max:100',
+            'username' => 'required|string|unique:users,username',
+            'password' => 'required|string|min:6',
+            'role'     => 'required|in:Admin,Operator',
+        ]);
+
+        User::create([
+            'name'     => $request->name,
+            'username' => $request->username,
+            'password' => Hash::make($request->password),
+            'role'     => $request->role,
+        ]);
+
+        return redirect()->route('admin.user')->with('success', 'User berhasil ditambahkan');
+    }
+    public function deleteuser($id){
+
+        // // Cegah admin menghapus dirinya sendiri
+        // if ($user->id == auth()->id()) {
+            //     return back()->with('error', 'Anda tidak bisa menghapus akun sendiri.');
+            // }
+
+        $id = $this->decryptId($id);
+
+        $user = User::findOrFail($id);
+        $user->delete();
+        return redirect()->route('admin.user')->with('success', 'User berhasil dihapus');
+    }
+    public function profil(){
+        $data['profil'] = profil_sekolah::first();
+        return view('admin.profil', $data);
     }
     public function berita(){
         $data ['berita'] = Berita::all();
@@ -58,7 +102,7 @@ class AdminController extends Controller
             'isi' => $request->isi,
             'tanggal' => $request->tanggal,
             'gambar' => $gambar,
-            'user_id' => 1, // simpan user yang login
+            'user_id' => 2, // simpan user yang login
         ]);
 
         return redirect()->route('admin.berita')->with('success', 'Berita berhasil ditambahkan');

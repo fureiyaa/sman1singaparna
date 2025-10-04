@@ -53,13 +53,14 @@
     <div class="text-center mb-4">
         <img src="{{ asset('assets/image/cocol.png') }}" alt="Logo" width="80" class="mb-2">
         <h5 class="fw-bold text-warning">SMAN 1 SINGAPARNA</h5>
-        <a class="btn btn-light" href="{{ route('admin.create-siswa') }}"> Profil Sekolah</a>
+        <a class="btn btn-light" href="{{ route('admin.profil') }}"> Profil Sekolah</a>
     </div>
     <ul class="nav flex-column">
         <li class="nav-item"><a href="/admin/dashboard" class="nav-link"><i class="fas fa-tachometer-alt"></i><span> Dashboard</span></a></li>
-        <li class="nav-item"><a href="/admin/berita" class="nav-link"><i class="fa-solid fa-newspaper"></i> Berita</a></li>
+        <li class="nav-item"><a href="/admin/user" class="nav-link"><i class="fa-solid fa-user"></i><span> User</span></a></li>
         <li class="nav-item"><a href="/admin/guru" class="nav-link"><i class="fa-solid fa-person-chalkboard"></i> Guru</a></li>
         <li class="nav-item"><a href="/admin/siswa" class="nav-link"><i class="fa-solid fa-graduation-cap"></i> Siswa</a></li>
+        <li class="nav-item"><a href="/admin/berita" class="nav-link"><i class="fa-solid fa-newspaper"></i> Berita</a></li>
         <li class="nav-item"><a href="/admin/ekstrakurikuler" class="nav-link"><i class="fa-solid fa-futbol"></i> Ekstrakurikuler</a></li>
         <li class="nav-item"><a href="/admin/agenda" class="nav-link"><i class="fa-solid fa-clipboard-list"></i> Agenda</a></li>
         <li class="nav-item"><a href="/admin/galeri" class="nav-link"><i class="fa-solid fa-photo-film"></i> Galeri</a></li>

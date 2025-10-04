@@ -34,7 +34,7 @@
     }
 </style>
 
-<div class="container py-5">
+<div class="container py-5 min-vh-100">
     <!-- Header -->
     <div class="galeri-header animate__animated animate__fadeInDown" style="background: url('{{ asset('assets/image/galeri.jpg') }}') no-repeat center; background-size: cover; height: 150px; background-position: center; display: flex; background-position: 0px -500px; flex-direction: column; justify-content: center; align-items: center; position: relative;">
         <div style="background: rgba(0, 0, 50, 0.6); position: absolute; top:0; left:0; width:100%; height:100%; border-radius: 0.5rem;"></div>

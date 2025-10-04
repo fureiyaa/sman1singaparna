@@ -20,6 +20,8 @@ Route::get('/agenda/{id}', [AgendaController::class, 'deleteagenda'])->name('adm
 
 Route::get('/admin/dashboard',  [AdminController::class, 'dashboard'])->name('admin.dashboard');
 Route::get('/admin/berita', [AdminController::class, 'berita'])->name('admin.berita');
+Route::get('/admin/user', [AdminController::class, 'user'])->name('admin.user');
+Route::get('/admin/profil', [AdminController::class, 'profil'])->name('admin.profil');
 Route::get('/admin/siswa', [AdminController::class, 'siswa'])->name('admin.siswa');
 Route::get('/admin/guru', [AdminController::class, 'guru'])->name('admin.guru');
 Route::get('/admin/ekstrakurikuler', [AdminController::class, 'ekstra'])->name('admin.ekstra');
@@ -28,6 +30,9 @@ Route::get('/admin/agenda', [AgendaController::class, 'agenda'])->name('admin.ag
 Route::get('/create-siswa', [AdminController::class, 'create'])->name('admin.create-siswa');
 Route::post('/create-siswa', [AdminController::class, 'store'])->name('admin.store-siswa');
 Route::get('/delete-siswa/{id}', [AdminController::class, 'deletesiswa'])->name('admin.delete-siswa');
+Route::get('/create-user', [AdminController::class, 'createuser'])->name('admin.create-user');
+Route::post('/create-user', [AdminController::class, 'storeuser'])->name('admin.store-user');
+Route::get('/delete-user/{id}', [AdminController::class, 'deleteuser'])->name('admin.delete-user');
 Route::get('/create-berita', [AdminController::class, 'createberita'])->name('admin.create-berita');
 Route::post('/create-berita', [AdminController::class, 'storeberita'])->name('admin.store-berita');
 Route::get('/delete-berita/{id}', [AdminController::class, 'deleteberita'])->name('admin.delete-berita');
