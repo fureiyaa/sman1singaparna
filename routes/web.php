@@ -9,13 +9,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [UserController::class, 'home'])->name('home');
 Route::get('/news', [UserController::class, 'berita'])->name('berita');
-Route::get('/berita/{id}', [UserController::class, 'show'])->name('berita.show');
+Route::get('/detail/berita/{id}', [UserController::class, 'detailberita'])->name('detail-berita');
 Route::get('/gurus', [UserController::class, 'guru'])->name('guru');
 Route::get('/galery', [UserController::class, 'galeri'])->name('siswa');
 Route::get('/ekstrakurikuler', [UserController::class, 'ekstra'])->name('ekstra');
+Route::get('/detail/ekstrakurikuler/{id}', [UserController::class, 'detailekstra'])->name('detail-ekstra');
 Route::get('/agenda', [AgendaController::class, 'index'])->name('agenda.index');
 Route::get('/agenda/events', [AgendaController::class, 'events'])->name('agenda.events');
-Route::get('/agenda/{id}', [AgendaController::class, 'deleteagenda'])->name('admin.delete-agenda');
 
 
 Route::get('/admin/dashboard',  [AdminController::class, 'dashboard'])->name('admin.dashboard');
@@ -47,3 +47,4 @@ Route::post('/create-galeri', [AdminController::class, 'storegaleri'])->name('ad
 Route::get('/delete-galeri/{id}', [AdminController::class, 'deletegaleri'])->name('admin.delete-galeri');
 Route::get('/create-agenda', [AgendaController::class, 'createagenda'])->name('admin.create-agenda');
 Route::post('/create-agenda', [AgendaController::class, 'storeagenda'])->name('admin.store-agenda');
+Route::get('/agenda/{id}', [AgendaController::class, 'deleteagenda'])->name('admin.delete-agenda');

@@ -25,11 +25,9 @@
         padding: 1.5rem;
     }
     .profil-card img.logo {
-        max-height: 100px;
         object-fit: contain;
     }
     .profil-card img.foto {
-        max-height: 160px;
         object-fit: cover;
         border-radius: 0.5rem;
     }

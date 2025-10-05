@@ -64,7 +64,7 @@
 }
 </style>
 
-<div class="container my-5 min-vh-100">
+<div class="container py-5 min-vh-100">
     <!-- Header -->
     <div class="berita-header animate__animated animate__fadeInDown" style="background: url('{{ asset('assets/image/berita.jpg') }}') no-repeat center; background-size: cover; height: 150px; background-position: 0px -450px; align-items: center; display: flex; justify-content: center; border-radius: 0.5rem; flex-direction: column; position: relative;">
         <div style="background: rgba(0, 0, 50, 0.6); position: absolute; top:0; left:0; width:100%; height:100%; border-radius: 0.5rem;"></div>
@@ -83,7 +83,7 @@
             <div class="position-relative">
                 <img src="{{ asset($item->gambar) }}" class="card-img-top" alt="{{ $item->judul }}" style="height: 220px; object-fit: cover; border-radius: 0.5rem 0.5rem 0 0;">
                 <div class="overlay d-flex align-items-center justify-content-center">
-                <a href="#"
+                <a href="{{ route('detail-berita', $item->id)}}"
                     class="btn btn-warning fw-bold">Baca Selengkapnya</a>
                 </div>
             </div>

@@ -23,8 +23,10 @@ class UserController extends Controller
         $data['berita'] = Berita::all();
         return view('berita', $data);
     }
-    public function show($id){
+    public function detailberita($id){
         $data['berita'] = Berita::findOrFail($id);
+        $data['terbaru'] = Berita::latest()->take(4)->get();
+
         return view('detail-berita', $data);
     }
     public function guru(){
@@ -40,5 +42,10 @@ class UserController extends Controller
     public function ekstra(){
         $data['ekstra'] = ekstrakurikuler::all();
         return view('ekstra', $data);
+    }
+    public function detailekstra($id){
+        $data['ekskul'] = ekstrakurikuler::findOrFail($id);
+
+        return view('detail-ekstra', $data);
     }
 }

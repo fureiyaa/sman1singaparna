@@ -38,6 +38,27 @@
         color: #002366;
         margin-bottom: 0.5rem;
     }
+    .ekskul-card .overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 35, 102, 0.6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+.ekskul-card:hover .overlay {
+  opacity: 1;
+}
+.ekskul-card .overlay a {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+.ekskul-card:hover .overlay a {
+  opacity: 1;
+  transform: translateY(0);
+}
 </style>
 
 <div class="container py-5 min-vh-100">
@@ -56,6 +77,10 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ $item->nama_ekskul }}</h5>
                     <p class="text-muted small">{{ Str::limit($item->deskripsi, 80, '...') }}</p>
+                    <div class="overlay d-flex align-items-center justify-content-center">
+                        <a href="{{ route('detail-ekstra', $item->id)}}"
+                        class="btn btn-warning fw-bold">Selengkapnya</a>
+                    </div>
                 </div>
             </div>
         </div>

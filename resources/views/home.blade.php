@@ -86,7 +86,7 @@
   <div style="background: rgba(0, 0, 50, 0.6); position: absolute; top:0; left:0; width:100%; height:100%;"></div>
   <div class="container position-relative" style="z-index: 2;">
     <img src="{{ asset('assets/image/cocol.png') }}" alt="Logo" width="150" class="mb-4 animate__animated animate__fadeInDown">
-    <h1 class="fw-bold text-warning animate__animated animate__fadeInUp">SMA NEGERI 1 SINGAPARNA</h1>
+    <h1 class="fw-bold text-white animate__animated animate__fadeInUp">SMA NEGERI 1 SINGAPARNA</h1>
     <p class="lead text-white fst-italic animate__animated animate__fadeInUp animate__delay-2s">
       "Berprestasi, Berkarakter, dan Berbudaya"
     </p>
@@ -248,7 +248,7 @@
           <div class="position-relative">
             <img src="{{ asset($item->gambar) }}" class="card-img-top" alt="{{ $item->judul }}" style="height: 220px; object-fit: cover; border-radius: 0.5rem 0.5rem 0 0;">
             <div class="overlay d-flex align-items-center justify-content-center">
-              <a href="#"
+              <a href="{{ route('detail-berita', $item->id)}}"
                  class="btn btn-warning fw-bold">Baca Selengkapnya</a>
             </div>
           </div>
