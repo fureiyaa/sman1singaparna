@@ -41,6 +41,9 @@
         padding-left: 10px;
         margin: 1.5rem 0 1rem;
     }
+    .fas{
+        color: #002366;
+    }
 </style>
 
 <div class="container-fluid py-4">
@@ -58,31 +61,31 @@
     <div class="card profil-card">
         <div class="card-body">
             <div class="row align-items-center">
-                <!-- Foto Kepala Sekolah -->
+                <!-- Logo Sekolah -->
                 <div class="col-md-3 text-center">
-                    <img src="{{ asset('assets/image/' . $profil->foto) }}"
-                         class="img-fluid foto mb-2" alt="Kepala Sekolah">
-                    <p class="fw-bold mb-0">{{ $profil->kepala_sekolah }}</p>
-                    <small class="text-muted">Kepala Sekolah</small>
+                    <img src="{{ asset('assets/image/' . $profil->logo) }}"
+                         class="img-fluid logo" alt="Logo Sekolah">
                 </div>
 
                 <!-- Info Sekolah -->
                 <div class="col-md-6 profil-info">
                     <h3 class="fw-bold">{{ $profil->nama_sekolah }}</h3>
-                    <p><i class="fas fa-id-card me-2 text-primary"></i>
+                    <p><i class="fas fa-id-card me-2"></i>
                         <strong>NPSN:</strong> {{ $profil->npsn }}</p>
-                    <p><i class="fas fa-map-marker-alt me-2 text-danger"></i>
+                    <p><i class="fas fa-map-marker-alt me-2r"></i>
                         <strong>Alamat:</strong> {{ $profil->alamat }}</p>
-                    <p><i class="fas fa-phone me-2 text-success"></i>
+                    <p><i class="fas fa-phone me-2"></i>
                         <strong>Kontak:</strong> {{ $profil->kontak }}</p>
-                    <p><i class="fas fa-calendar-alt me-2 text-warning"></i>
+                    <p><i class="fas fa-calendar-alt me-2"></i>
                         <strong>Tahun Berdiri:</strong> {{ $profil->tahun_berdiri }}</p>
                 </div>
 
-                <!-- Logo Sekolah -->
+                <!-- Kepsek -->
                 <div class="col-md-3 text-center">
-                    <img src="{{ asset('assets/image/' . $profil->logo) }}"
-                         class="img-fluid logo" alt="Logo Sekolah">
+                    <img src="{{ asset('assets/image/' . $profil->foto) }}"
+                         class="img-fluid foto mb-2" alt="Kepala Sekolah" width="200" height="250">
+                    <p class="fw-bold mb-0">{{ $profil->kepala_sekolah }}</p>
+                    <small class="text-muted">Kepala Sekolah</small>
                 </div>
             </div>
 

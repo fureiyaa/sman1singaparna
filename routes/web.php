@@ -13,6 +13,7 @@ Route::get('/detail/berita/{id}', [UserController::class, 'detailberita'])->name
 Route::get('/gurus', [UserController::class, 'guru'])->name('guru');
 Route::get('/galery', [UserController::class, 'galeri'])->name('siswa');
 Route::get('/ekstrakurikuler', [UserController::class, 'ekstra'])->name('ekstra');
+Route::get('/profil-sekolah', [UserController::class, 'profil'])->name('profil');
 Route::get('/detail/ekstrakurikuler/{id}', [UserController::class, 'detailekstra'])->name('detail-ekstra');
 Route::get('/agenda', [AgendaController::class, 'index'])->name('agenda.index');
 Route::get('/agenda/events', [AgendaController::class, 'events'])->name('agenda.events');

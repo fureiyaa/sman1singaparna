@@ -90,7 +90,7 @@
     <p class="lead text-white fst-italic animate__animated animate__fadeInUp animate__delay-2s">
       "Berprestasi, Berkarakter, dan Berbudaya"
     </p>
-    <a href="#profil" class="btn btn-warning fw-bold mt-3 shadow-lg animate__animated animate__fadeInUp animate__delay-2s">
+    <a href="{{ route('profil')}}" class="btn btn-warning fw-bold mt-3 shadow-lg animate__animated animate__fadeInUp animate__delay-2s">
       Lihat Profil
     </a>
   </div>

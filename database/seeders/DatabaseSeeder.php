@@ -18,14 +18,14 @@ class DatabaseSeeder extends Seeder
 
         User::create([
             'name' => 'Test User',
-            'username' => 'admin',
+            'username' => 'admin1',
             'password' => 'admin12345',
         ]);
 
         profil_sekolah::create([
             'nama_sekolah' => 'SMAN 1 Singaparna',
             'kepala_sekolah' => 'Drs. H. Nama Kepala Sekolah',
-            'foto' => 'kepsek.png',
+            'foto' => 'kepsok.jpg',
             'logo' => 'cocol.png',
             'npsn' => '20276001',
             'alamat' => 'Jl. Raya Singaparna No. 123, Tasikmalaya, Jawa Barat',

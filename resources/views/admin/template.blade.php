@@ -56,7 +56,7 @@
         <div class="nav-item"><a class="nav-link btn shadow-sm py-4 d-flex align-items-center justify-content-center" style="height: 30px;" href="{{ route('admin.profil') }}"> Profil Sekolah</a></div>
     </div>
     <ul class="nav flex-column">
-        <li class="nav-item"><a href="/admin/dashboard" class="nav-link"><i class="fas fa-tachometer-alt"></i><span> Dashboard</span></a></li>
+        <li class="nav-item"><a href="/admin/dashboard" class="nav-link"><i class="fa-solid fa-tachometer-alt me-2"></i><span>Dashboard</span></a></li>
         <li class="nav-item"><a href="/admin/user" class="nav-link"><i class="fa-solid fa-user"></i><span> User</span></a></li>
         <li class="nav-item"><a href="/admin/guru" class="nav-link"><i class="fa-solid fa-person-chalkboard"></i> Guru</a></li>
         <li class="nav-item"><a href="/admin/siswa" class="nav-link"><i class="fa-solid fa-graduation-cap"></i> Siswa</a></li>

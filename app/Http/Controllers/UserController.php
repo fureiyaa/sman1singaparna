@@ -6,6 +6,7 @@ use App\Models\Berita;
 use App\Models\ekstrakurikuler;
 use App\Models\Galeri;
 use App\Models\Guru;
+use App\Models\profil_sekolah;
 use App\Models\Siswa;
 use Illuminate\Http\Request;
 
@@ -17,6 +18,7 @@ class UserController extends Controller
         $data['galeri'] = Galeri::latest()->take(6)->get();
         $data['guru'] = Siswa::all();
         $data['siswa'] = Siswa::all();
+        $data['profil'] = profil_sekolah::first();
         return view('home', $data);
     }
     public function berita(){
@@ -47,5 +49,9 @@ class UserController extends Controller
         $data['ekskul'] = ekstrakurikuler::findOrFail($id);
 
         return view('detail-ekstra', $data);
+    }
+    public function profil(){
+        $data['profil'] = profil_sekolah::first();
+        return view('profil-sekolah', $data);
     }
 }

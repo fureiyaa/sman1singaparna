@@ -49,7 +49,15 @@
         @forelse($galeri as $item)
             <div class="col-md-4 col-sm-6 animate__animated animate__fadeInUp">
                 <div class="card galeri-card shadow-sm">
-                    <img src="{{ asset($item->file) }}" alt="Galeri" class="img-fluid">
+                    @if($item->kategori == 'Foto')
+                        <img src="{{ asset($item->file) }}"
+                            width="120" class="img-thumbnail">
+                    @elseif($item->kategori == 'Video')
+                        <video width="400" controls>
+                            <source src="{{ asset($item->file) }}" type="video/mp4">
+                            Browser tidak mendukung video.
+                        </video>
+                    @endif
                     <div class="card-body">
                         <h5 class="card-title">{{ $item->judul }}</h5>
                         <p class="card-text">{{ Str::limit($item->deskripsi, 80) }}</p>
